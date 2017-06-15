@@ -125,8 +125,8 @@ G4VPhysicalVolume* A2CryoTarget::Construct1(G4LogicalVolume *MotherLogic, G4doub
     G4Sphere* LD2B=new G4Sphere("LD2B",r_lD2B - t_lD2B,r_lD2B,0*CLHEP::deg,360*CLHEP::deg,0,asin(r_lD2A/r_lD2B)*CLHEP::rad);
     G4LogicalVolume* LD2BLogic=new G4LogicalVolume(LD2B,fMaterial,"LD2B");
     new G4PVPlacement(0,G4ThreeVector(0,0,-l_trgt/2. + l_CU64 + l_lD2A + t_lD2B - r_lD2B),LD2BLogic,"LD2B",fMyLogic,false,9);
-    G4cout<<"Target centre "<<(-l_trgt/2. + l_CU64 + l_lD2A + t_lD2B - r_lD2B)/CLHEP::cm <<" "<<l_CU64 + (l_lD2A - l_trgt)/2.-tm+0.25*CLHEP::cm<<G4endl;
-    fCenter.set(0,0,l_CU64 + (l_lD2A - l_trgt)/2.-tm+0.25*CLHEP::cm);//position of cell in world volume
+    G4cout<<"Target centre "<<(-l_trgt/2. + l_CU64 + l_lD2A + t_lD2B - r_lD2B + Z0)/CLHEP::cm <<" "<<l_CU64 + (l_lD2A - l_trgt)/2.-tm+0.25*CLHEP::cm<<G4endl;
+    fCenter.set(0,0,Z0 + l_CU64 + (l_lD2A - l_trgt)/2.-tm+0.25*CLHEP::cm);//position of cell in world volume
     G4Sphere* LD2C=new G4Sphere("LD2C",r_lD2C - t_lD2C,r_lD2C,0*CLHEP::deg,360*CLHEP::deg,180.*CLHEP::deg-asin((r_CU64-t_CU64)/r_lD2C)*CLHEP::rad,asin((r_CU64-t_CU64)/r_lD2C)*CLHEP::rad);
     G4LogicalVolume* LD2CLogic=new G4LogicalVolume(LD2C,fMaterial,"LD2C");
     new G4PVPlacement(0,G4ThreeVector(0,0,-l_trgt/2. + l_CU64 - t_lD2C + r_lD2C),LD2CLogic,"LD2C",fMyLogic,false,10);
@@ -263,8 +263,8 @@ G4VPhysicalVolume* A2CryoTarget::Construct2(G4LogicalVolume *MotherLogic, G4doub
     G4Sphere* LD2B=new G4Sphere("LD2B",r_lD2B - t_lD2B,r_lD2B,0*CLHEP::deg,360*CLHEP::deg,0,asin(r_lD2A/r_lD2B)*CLHEP::rad);
     G4LogicalVolume* LD2BLogic=new G4LogicalVolume(LD2B,fMaterial,"LD2B");
     new G4PVPlacement(0,G4ThreeVector(0,0,-l_trgt/2. + l_CU64 + l_lD2A + t_lD2B - r_lD2B),LD2BLogic,"LD2B",fMyLogic,false,9);
-    G4cout<<"Target centre "<<(-l_trgt/2. + l_CU64 + l_lD2A + t_lD2B - r_lD2B)/CLHEP::cm <<" "<<l_CU64 + (l_lD2A - l_trgt)/2.-tm+0.25*CLHEP::cm<<G4endl;
-    fCenter.set(0,0,l_CU64 + (l_lD2A - l_trgt)/2.-tm+0.25*CLHEP::cm);//position of cell in world volume
+    G4cout<<"Target centre "<<(-l_trgt/2. + l_CU64 + l_lD2A + t_lD2B - r_lD2B + Z0)/CLHEP::cm <<" "<<l_CU64 + (l_lD2A - l_trgt)/2.-tm+0.25*CLHEP::cm<<G4endl;
+    fCenter.set(0,0,Z0 + l_CU64 + (l_lD2A - l_trgt)/2.-tm+0.25*CLHEP::cm);//position of cell in world volume
     G4Sphere* LD2C=new G4Sphere("LD2C",r_lD2C - t_lD2C,r_lD2C,0*CLHEP::deg,360*CLHEP::deg,180.*CLHEP::deg-asin((r_CU64-t_CU64)/r_lD2C)*CLHEP::rad,asin((r_CU64-t_CU64)/r_lD2C)*CLHEP::rad);
     G4LogicalVolume* LD2CLogic=new G4LogicalVolume(LD2C,fMaterial,"LD2C");
     new G4PVPlacement(0,G4ThreeVector(0,0,-l_trgt/2. + l_CU64 - t_lD2C + r_lD2C),LD2CLogic,"LD2C",fMyLogic,false,10);
